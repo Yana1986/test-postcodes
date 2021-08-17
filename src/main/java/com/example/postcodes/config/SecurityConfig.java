@@ -13,13 +13,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/api/v1/postcodes")
+                .antMatchers("/api/v1/postcodes/**")
                 .authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login")
+                .loginPage("/api/v1/auth/login")
                 .and()
                 .logout()
+                .logoutUrl("/api/v1/auth/logout")
                 .logoutSuccessUrl("/");
     }
 

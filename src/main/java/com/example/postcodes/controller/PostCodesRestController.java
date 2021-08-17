@@ -9,13 +9,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/postcodes")
 public class PostCodesRestController {
-    @PostMapping()
+    @PostMapping("/createWithList")
     public List<Area> createList(@RequestBody List<Area> areas) {
         return Collections.emptyList();
     }
 
-    @GetMapping()
-    public List<Area> getByPostcodes(@RequestParam List<String> postcodes) {
+    @GetMapping("/findByPostcodes")
+    public List<Area> findByPostcodes(@RequestParam List<String> postcodes) {
         return Collections.emptyList();
     }
 }
