@@ -19,8 +19,8 @@ public class AreaServiceImpl implements AreaService {
     private final AreaRepository areaRepository;
 
     @Override
-    public NamesWithNumberOfCharactersDTO findSortedNamesWithNumberOfCharactersByPostcodes(List<String> postcodes) {
-        List<Area> areas = areaRepository.findByIdPostcodeIn(postcodes);
+    public NamesWithNumberOfCharactersDTO findSortedNamesWithNumberOfCharactersByPostcodes(String postcodeFrom, String postcodeTo) {
+        List<Area> areas = areaRepository.findByIdPostcodeBetween(postcodeFrom, postcodeTo);
         return new NamesWithNumberOfCharactersDTO(
                 areas.stream().map(area -> area.getId().getName()).sorted().collect(Collectors.toList()),
                 areas.stream().reduce(0, (num, area) -> num + area.getId().getName().length(), Integer::sum)

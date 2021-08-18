@@ -6,7 +6,7 @@ import com.example.postcodes.dto.NamesWithNumberOfCharactersDTO;
 import java.util.List;
 
 public interface AreaService {
-    NamesWithNumberOfCharactersDTO findSortedNamesWithNumberOfCharactersByPostcodes(List<String> postcodes);
+    NamesWithNumberOfCharactersDTO findSortedNamesWithNumberOfCharactersByPostcodes(String postcodeFrom, String postcodeTo);
 
     List<AreaDTO> createWithList(List<AreaDTO> areas);
 }

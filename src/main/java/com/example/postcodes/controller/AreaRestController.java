@@ -22,7 +22,8 @@ public class AreaRestController {
     }
 
     @GetMapping("/findSortedNamesWithNumberOfCharactersByPostcodes")
-    public NamesWithNumberOfCharactersDTO findSortedNamesWithNumberOfCharactersByPostcodes(@RequestParam List<String> postcodes) {
-        return areaService.findSortedNamesWithNumberOfCharactersByPostcodes(postcodes);
+    public NamesWithNumberOfCharactersDTO findSortedNamesWithNumberOfCharactersByPostcodes(
+            @RequestParam String postcodeFrom, @RequestParam String postcodeTo) {
+        return areaService.findSortedNamesWithNumberOfCharactersByPostcodes(postcodeFrom, postcodeTo);
     }
 }

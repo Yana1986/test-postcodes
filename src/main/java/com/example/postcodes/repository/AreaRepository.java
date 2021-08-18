@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface AreaRepository extends JpaRepository<Area, AreaId> {
 
-    List<Area> findByIdPostcodeIn(List<String> postcodes);
+    List<Area> findByIdPostcodeBetween(String postcodeFrom, String postcodeTo);
 }
