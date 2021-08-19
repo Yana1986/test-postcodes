@@ -25,7 +25,8 @@ Use this request to pass a list of Names and Postcodes in the HTTP request body,
 --data-raw **json**
 
 For example:
-curl -X POST 'http://localhost:8080/api/v1/areas/createWithList' \
+
+> curl -X POST 'http://localhost:8080/api/v1/areas/createWithList' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: JSESSIONID=0A48315EB35D10DF27F18F2A9002CA20' \
 --data-raw '[
